@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Punk IPA</title>
+    <link rel="stylesheet" href="./dist/css/style.css" />
+</head>
+<body>
+    <header>
+        <div class="hero-slideshow-outer">
+            <div class="hero-slideshow-overlay"></div>
+            <div class="hero-slideshow">
+                <img class="hero-slideshow__slide" src="dist/img/hero-images/bar2.jpg" />
+                <img class="hero-slideshow__slide" src="dist/img/hero-images/bar3.jpg" />
+            </div>
+        </div>
+        <h1>Punk IPA</h1>
+        <div class="header__title-links">
+            <nav>
+                <ul class="list--destyled">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">The company</a>
+                    </li>
+                    <li>
+                        <a href="#">The IPAs</a>
+                    </li>
+                    <li>
+                        <a href="#">The bars</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <div class="row">
+        <div class="content-wrapper half-width-non-mobile">
+            <h2>Accordion example</h2>
+            <p>
+                You can create beautiful things - but you have to see them in your mind first. A thin paint will stick to a thick paint.
+            </p>
+            <ul class="beer-accordion list--destyled" id="beer-accordion"></ul>
+        </div>
+        <div class="content-wrapper half-width-non-mobile">
+            <div class="cycle-slideshow-outer">
+                <div class="cycle-slideshow cycle-slideshow--controlled" data-cycle-fx="scrollHorz" data-cycle-paused="true">
+                    <img class="cycle-slideshow__slide" src="dist/img/hero-images/bar1.jpg" />
+                    <img class="cycle-slideshow__slide" src="dist/img/hero-images/bar2.jpg" />
+                    <img class="cycle-slideshow__slide" src="dist/img/hero-images/bar3.jpg" />
+                </div>
+                <div class="cycle-slideshow-controls">
+                    <a href="#" class="btn btn--primary cycle-slideshow-controls__prev">Previous</a>
+                    <a href="#" class="btn btn--primary cycle-slideshow-controls__next">Next</a>
+                    <!--<a href="#" class="btn btn--primary cycle-slideshow-controls__add">Add</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="content-wrapper">
+            <div class="cta-beer-grid">
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://malsup.github.io/jquery.cycle2.js"></script>
+    <script type="text/javascript" src="./dist/js/app.js"></script>
+</body>
+</html>

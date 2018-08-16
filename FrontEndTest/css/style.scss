@@ -1,0 +1,321 @@
+﻿$brown: #3d2420;
+$white: #fff;
+$black: #000;
+$defaultBorderRadius: 3px;
+
+@mixin linear-gradient($colour1, $colour2) {
+    background-color: $colour2;
+    background: -moz-linear-gradient(top, $colour1 0%, $colour2 100%);
+    background: -webkit-linear-gradient(top, $colour1 0%,$colour2 100%);
+    background: linear-gradient(to bottom, $colour1 0%,$colour2 100%);
+}
+
+.row{
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.4);
+}
+
+.list--destyled{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Calibri;
+    background-color: $black;
+    color: $white;
+}
+
+header {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+}
+
+h1{
+    font-family: serif;
+    position: relative;
+    text-align: center;
+    z-index: 160;
+    color: $white;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+.header__title-links, .header__search {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 160;
+    width: 100%;
+    padding: 10px;
+}
+
+.header__title-links {
+    position: relative;
+    font-size: 1.4em;
+    font-weight: 600;
+    overflow-x: auto;
+
+    nav {
+        width: 550px;
+        margin: 0;
+
+        ul {
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 10px;
+
+            a {
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.hero-slideshow-outer, .hero-slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slideshow-outer{
+    overflow: hidden;
+}
+
+.hero-slideshow-overlay {
+    background-color: rgba(0,0,0,0.8);
+    z-index: 150;
+}
+
+.hero-slideshow{
+    height: 100%;
+}
+
+.hero-slideshow__slide{
+    width: 100%;
+}
+
+.content-wrapper {
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    width: 100%;
+}
+
+.beer-accordion {
+    display: block;
+    border-radius: $defaultBorderRadius;
+    overflow: hidden;
+    max-width: 900px;
+}
+
+.beer-accordion__item {
+    display: inline-block;
+    background-color: white;
+    @extend .box-shadow;
+    width: 100%;
+}
+
+.beer-accordion__item.closed .beer-accordion__item__content {
+    height: 0;
+    padding: 0;
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+.beer-accordion__item.open {
+    & .beer-accordion__item__header:before {
+        content: '-'
+    }
+}
+
+.beer-accordion__item__content {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease;
+    color: #000;
+}
+
+.beer-accordion__item__header {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    min-height: 45px;
+    padding: 10px 40px 10px 10px;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: $brown;
+    font-size: 1.2em;
+    @include linear-gradient(#dfdfdf, #bfbfbf);
+
+    &:before {
+        content: '+';
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 1.4em;
+        color: $brown;
+        font-weight: 600;
+    }
+
+    &:hover {
+        @include linear-gradient(#dfdfdf, #dfdfdf);
+    }
+}
+
+.beer-accordion__item__content {
+    display: block;
+    float: left;
+    padding: 10px;
+    -webkit-transition: height 1s;
+    transition: height 1s;
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $white;
+}
+
+.cycle-slideshow-outer {
+    display: block;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.cycle-slideshow__slide{
+    max-width: 100%;
+}
+
+.cycle-slideshow-controls{
+    text-align: center;
+    a{
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 10px 5px 0;
+        color: $white;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.cta-beer-grid {
+    width: 100%;
+    .cta-beer-grid__item{
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0 5px 80px;
+        min-height: 200px;
+        border: 5px solid $white;
+        background-size: contain;
+        background-position-x: 50%;
+        background-repeat: no-repeat;
+        width: calc(50% - 10px);
+        cursor: pointer;
+        h3{
+            position: absolute;
+            bottom: -70px;
+            left: -5px;
+            width: calc(100% + 10px);
+            background-color: $white;
+            color: #000;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+            font-size: 1.2em;
+            height: 82px;
+        }
+    }
+}
+
+@media all and (min-width: 768px) {
+    .header__search {
+        width: 40%;
+    }
+
+    .header__search {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header__title-links {
+        width: 59.5%;
+        font-size: 1.2em;
+
+        nav {
+            width: auto;
+        }
+    }
+
+    .cycle-slideshow-outer {
+        margin-top: 30px;
+    }
+
+    .cta-beer-grid .cta-beer-grid__item {
+        min-height: 300px;
+        width: calc(25% - 10px);
+
+        h3 {
+            font-size: 1.4em;
+        }
+    }
+}
+
+@media all and (min-width: 1024px) {
+    main, footer {
+        padding: 20px;
+    }
+
+    .header__search {
+        width: 25%;
+    }
+
+    .header__title-links {
+        width: 100%;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .header__title-links nav {
+        width: auto;
+    }
+
+    .half-width-non-mobile {
+    width: calc(50% - 20px);
+    }
+
+    .cta-beer-grid .cta-beer-grid__item {
+        width: calc(16.66% - 10px);
+
+        h3 {
+            font-size: 1.6em;
+        }
+    }
+}
